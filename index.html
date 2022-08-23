@@ -32,18 +32,18 @@
     </main>
     <footer class="footer">
         <nav>
-            <a href wm-nav="/button.html"><button class="button-1" role="button"><b>Última curiosidade</b></button></a>
+            <a href wm-nav="/extra.html"><button class="button-30" role="button"><b>Última curiosidade</b></button></a>
         </nav>
-        <section id="content"></section>
+        <section id="conteudo"></section>
     </footer>
     <script>
         document.querySelectorAll('[wm-nav]').forEach(link=> {
-            const content = document.getElementById('content')
+            const conteudo = document.getElementById('conteudo')
             link.onclick = function(e){
                 e.preventDefault()
                 fetch(link.getAttribute('wm-nav'))
                     .then(resp => resp.text())
-                    .then(html => content.innerHTML = html)
+                    .then(html => conteudo.innerHTML = html)
             }
         })
     </script>
