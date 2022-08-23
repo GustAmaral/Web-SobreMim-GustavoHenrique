@@ -13,22 +13,39 @@
         <h2>Sobre mim</h2>
     </header>
     <main class="text">
-        <p>Sou calourdo do curso de Ciências da Computação (turma de 2022), <br>
+        <b>
+        <p>Sou calourdo do curso de Ciências da Computação (turma de 2022),<br>
         tenho curso técnico em informática (técnico do ensino médio) e logística (Pronatec),<br>
         além de ter técnico em montagem e manutenção de microcomputadores.</p><br>
+        </b>
         <h1 class="title-list">Curiosidades: </h1>
         <ul>
+            <b>
             <li>Me considero organizado na medida do possível</li>
             <li>Gosto de jogar bola (habilidade já é um caso a parte)</li>
             <li>Não sou muito chegado em bebida</li>
             <li>Topo qualquer tipo de rolê</li>
             <li>Já fui viciado em video game ao ponto de gastar mais de R$5000,00 em skin só para um único jogo</li>
             <li>Já trabalhei de muita coisa: desde eletricista até carteiro</li><br><br>
+            </b>
         </ul>
-    </main><br><br>
+    </main><br>
     <footer class="footer">
-        <h5>Oservação:</h5>
-        <h5>Tenho o apelido de Fumaça, porém não fumo...</h5>
+        <nav>
+            <a href wm-nav="/extra.html"><button class="button-1" role="button"><b>Última curiosidade</b></button></a>
+        </nav>
+        <section id="content"></section>
     </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link=> {
+            const content = document.getElementById('content')
+            link.onclick = function(e){
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav'))
+                    .then(resp => resp.text())
+                    .then(html => content.innerHTML = html)
+            }
+        })
+    </script>
 </body>
 </html>
